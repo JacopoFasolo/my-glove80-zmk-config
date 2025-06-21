@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 #define HYPER LC(LS(LG(LALT)))
@@ -87,6 +88,13 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        euro: euro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_8 &kt RIGHT_ALT>;
+            label = "EURO";
+        };
     };
 
     keymap {
@@ -102,12 +110,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1            &kp F2           &kp F3           &kp F4             &kp F5                                                                                               &kp F6          &kp F7         &kp F8           &kp F9          &kp F10
-&kp F12           &kp N1           &kp N2           &kp N3             &kp N4        &kp N5                                                                         &kp N6  &kp N7          &kp N8         &kp N9           &kp N0          &hrm LC(KP_DIVIDE) KP_DIVIDE
-&kp ESCAPE        &kp Q            &kp W            &kp E              &hrm LC(R) R  &hrm ENTER T                                                                   &kp Y   &kp U           &kp I          &kp O            &kp P           &kp KP_DIVIDE
-&hrm LS(TAB) TAB  &hrm LEFT_ALT A  &hrm LEFT_GUI S  &hrm LEFT_SHIFT D  &hrm LCTRL F  &hrm SPACE G                                                                   &kp H   &hrm LCTRL J    &hrm LSHIFT K  &hrm LGUI L      &hrm LALT SEMI  &kp SLASH
-&sl 2             &kp Z            &hrm LC(X) X     &hrm LC(C) C       &hrm LC(V) V  &kp B         &kp LSHFT  &kp LCTRL  &layer_td  &kp LGUI  &kp RCTRL  &kp ENTER  &kp N   &kp M           &kp COMMA      &kp DOT          &kp MINUS       &kp PG_UP
-&magic 3 0        &kp HOME         &kp END          &kp LC(LS(TAB))    &kp LC(TAB)                 &kp BSPC   &kp DEL    &kp LALT   &kp HOME  &kp END    &kp SPACE          &kp LEFT_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp DOWN_ARROW  &kp PG_DN
+&kp F1            &kp F2           &kp F3           &kp F4             &kp F5                                                                                                &kp F6          &kp F7         &kp F8           &kp F9          &kp F10
+&kp F12           &kp N1           &kp N2           &kp N3             &kp N4        &kp N5                                                                          &kp N6  &kp N7          &kp N8         &kp N9           &kp N0          &hrm LC(KP_DIVIDE) KP_DIVIDE
+&kp ESCAPE        &kp Q            &kp W            &kp E              &hrm LC(R) R  &hrm ENTER T                                                                    &kp Y   &kp U           &kp I          &kp O            &kp P           &kp KP_DIVIDE
+&hrm LS(TAB) TAB  &hrm LEFT_ALT A  &hrm LEFT_GUI S  &hrm LEFT_SHIFT D  &hrm LCTRL F  &hrm SPACE G                                                                    &kp H   &hrm LCTRL J    &hrm LSHIFT K  &hrm LGUI L      &hrm LALT SEMI  &kp SLASH
+&sl 2             &kp Z            &hrm LC(X) X     &hrm LC(C) C       &hrm LC(V) V  &kp B         &kp LSHFT  &kp LCTRL  &layer_td   &mkp MB1  &kp RCTRL  &kp ENTER  &kp N   &kp M           &kp COMMA      &kp DOT          &kp MINUS       &kp PG_UP
+&magic 3 0        &kp HOME         &kp END          &kp LC(LS(TAB))    &kp LC(TAB)                 &kp BSPC   &mo 1      &kp DELETE  &kp HOME  &kp END    &kp SPACE          &kp LEFT_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp DOWN_ARROW  &kp PG_DN
             >;
         };
 
@@ -115,7 +123,7 @@
             bindings = <
 &trans  &trans  &trans            &trans  &trans                                                                                      &trans                 &trans             &trans                 &trans           &trans
 &trans  &trans  &trans            &trans  &trans             &trans                                                  &trans           &trans                 &trans             &trans                 &trans           &trans
-&trans  &trans  &kp LS(NUMBER_4)  &trans  &kp SINGLE_QUOTE   &trans                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
+&trans  &trans  &kp LS(NUMBER_4)  &euro   &kp SINGLE_QUOTE   &trans                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
 &trans  &trans  &trans            &trans  &kp DOUBLE_QUOTES  &trans                                                  &kp AMPERSAND    &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LS(RIGHT_BRACKET)  &kp PERCENT      &trans
 &trans  &trans  &trans            &trans  &kp GRAVE          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp KP_PLUS            &kp KP_MINUS       &kp KP_DIVIDE          &kp KP_MULTIPLY  &trans
 &trans  &trans  &trans            &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans                   &trans                 &trans             &trans                 &trans           &trans
