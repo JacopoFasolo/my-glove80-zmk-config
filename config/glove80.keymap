@@ -54,7 +54,7 @@
 
         hrm_lw: hrm_lw {
             compatible = "zmk,behavior-hold-tap";
-            label = "HRM_LW";
+            label = "HRM long wait";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -64,8 +64,18 @@
 
         lth: lth {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTH";
+            label = "Layer Tap Hold";
             bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        hrm_e_acc: hrmm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM e acc";
+            bindings = <&e_acc_upp>, <&e_acc>;
 
             #binding-cells = <2>;
             tapping-term-ms = <400>;
@@ -115,6 +125,48 @@
             bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_8 &kt RIGHT_ALT>;
             label = "EURO";
         };
+
+        e_acc_upp: e_acc_upp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kt RIGHT_ALT>;
+            label = "E_ACC_UPP";
+        };
+
+        a_acc: a_acc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kt RIGHT_ALT>;
+            label = "A_ACC";
+        };
+
+        e_acc: e_acc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_2 &kt RIGHT_ALT>;
+            label = "E_ACC";
+        };
+
+        i_acc: i_acc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_6 &kt RIGHT_ALT>;
+            label = "I_ACC";
+        };
+
+        o_acc: o_acc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_2 &kt RIGHT_ALT>;
+            label = "O_ACC";
+        };
+
+        u_acc: u_acc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_9 &kt RIGHT_ALT>;
+            label = "U_ACC";
+        };
     };
 
     keymap {
@@ -142,7 +194,7 @@
         symbols {
             bindings = <
 &trans  &trans  &trans            &trans       &trans                                                                                                &trans                 &trans             &trans                 &trans           &trans
-&trans  &trans  &trans            &trans       &trans             &trans                                                            &trans           &trans                 &trans             &trans                 &trans           &trans
+&trans  &u_acc  &o_acc            &i_acc       &hrm_e_acc 0 0     &a_acc                                                            &trans           &trans                 &trans             &trans                 &trans           &trans
 &trans  &trans  &kp LS(NUMBER_4)  &euro        &kp SINGLE_QUOTE   &kp LS(NUMBER_6)                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
 &trans  &kp AT  &kp EXCL          &kp EQUAL    &kp DOUBLE_QUOTES  &kp DOT                                                           &kp AMPERSAND    &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LS(LEFT_BRACKET)   &kp PERCENT      &trans
 &trans  &trans  &kp LS(COMMA)     &kp LS(DOT)  &kp GRAVE          &kp HASH          &trans  &trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp KP_PLUS            &kp KP_MINUS       &kp KP_DIVIDE          &kp KP_MULTIPLY  &trans
