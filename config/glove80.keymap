@@ -195,9 +195,9 @@
             bindings = <
 &trans  &trans  &trans            &trans       &trans                                                                                                &trans                 &trans             &trans                 &trans           &trans
 &trans  &u_acc  &o_acc            &i_acc       &hrm_e_acc 0 0     &a_acc                                                            &trans           &trans                 &trans             &trans                 &trans           &trans
-&trans  &trans  &kp LS(NUMBER_4)  &euro        &kp SINGLE_QUOTE   &kp LS(NUMBER_6)                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
+&trans  &none   &kp LS(NUMBER_4)  &euro        &kp SINGLE_QUOTE   &kp LS(NUMBER_6)                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
 &trans  &kp AT  &kp EXCL          &kp EQUAL    &kp DOUBLE_QUOTES  &kp DOT                                                           &kp AMPERSAND    &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LS(LEFT_BRACKET)   &kp PERCENT      &trans
-&trans  &trans  &kp LS(COMMA)     &kp LS(DOT)  &kp GRAVE          &kp HASH          &trans  &trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp KP_PLUS            &kp KP_MINUS       &kp KP_DIVIDE          &kp KP_MULTIPLY  &trans
+&trans  &none   &kp LS(COMMA)     &kp LS(DOT)  &kp GRAVE          &kp HASH          &trans  &trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp KP_PLUS            &kp KP_MINUS       &kp KP_DIVIDE          &kp KP_MULTIPLY  &trans
 &trans  &trans  &trans            &trans       &trans                               &trans  &trans  &trans  &trans  &trans  &trans                   &trans                 &trans             &trans                 &trans           &trans
             >;
         };
