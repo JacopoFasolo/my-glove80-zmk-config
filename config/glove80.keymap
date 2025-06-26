@@ -193,7 +193,7 @@
 
         symbols {
             bindings = <
-&trans  &trans  &trans            &trans       &trans                                                                                                &trans                 &trans             &trans                 &trans           &trans
+&trans  &trans  &trans            &trans       &trans                                                                                                &trans                 &trans             &trans                 &trans           &none
 &trans  &u_acc  &o_acc            &i_acc       &hrm_e_acc 0 0     &a_acc                                                            &trans           &trans                 &trans             &trans                 &trans           &trans
 &trans  &none   &kp LS(NUMBER_4)  &euro        &kp SINGLE_QUOTE   &kp LS(NUMBER_6)                                                  &kp PIPE         &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp LS(RIGHT_BRACKET)  &kp TILDE        &trans
 &trans  &kp AT  &kp EXCL          &kp EQUAL    &kp DOUBLE_QUOTES  &kp DOT                                                           &kp AMPERSAND    &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LS(LEFT_BRACKET)   &kp PERCENT      &trans
